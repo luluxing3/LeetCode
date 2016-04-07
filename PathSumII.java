@@ -25,6 +25,7 @@ public class Solution {
         if (root.left == null && root.right == null && sum == 0)
             rets.add(new ArrayList<>(path));
         
+        
         DFS(root.left, sum, rets, path);
         DFS(root.right, sum, rets, path);
         path.remove(path.size() - 1);
