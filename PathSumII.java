@@ -27,7 +27,6 @@ public class Solution {
         
         DFS(root.left, sum, rets, path);
         DFS(root.right, sum, rets, path);
-        sum += root.val;
         path.remove(path.size() - 1);
     }
 }
