@@ -3,6 +3,7 @@ public class Solution {
         char[] str = s.toCharArray();
         int[] map = new int[256];
         
+        
         int low = 0;
         int count = 0, len = 0;
         for (int i = 0; i < str.length; i++) {
