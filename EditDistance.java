@@ -1,7 +1,7 @@
 
 public class EditDistance {
 	
-	public int distance(String s1, String s2) {
+	public int minDistance(String s1, String s2) {
 		int n = s1.length() + 1;
 		int m = s2.length() + 1;
 		int[][] d = new int[n][m];
