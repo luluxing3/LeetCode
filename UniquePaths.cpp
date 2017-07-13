@@ -12,4 +12,16 @@ public:
         
         return d[m - 1][n - 1];
     }
+
+    // 滚动数组 空间复杂度O(n)
+    int uniquePaths(int m, int n) {     
+        int d[n] = {0}; // 滚动数组
+        for (int i = 0; i < m; i++) {
+            d[0] = 1;
+            for (int j = 1; j < n; j++)
+                d[j] += d[j - 1];
+        }
+        
+        return d[n - 1];
+    }
 };
