@@ -3,17 +3,22 @@ class Solution(object):
         start = None
         maxLen = 0
         polindromicMatrix = [[None]*len(string) for x in range(len(string))]
-        for i in range(len(string)):
-            for j in range(i, len(string)):
-                if i == j:
-                    polindromicMatrix[i][j] = True
-                elif j = i + 1:
-                    polindromicMatrix[i][j] = string[i] == string[j]
+        for j in range(len(string)):
+            for i in range(len(string)):
+                if j == 0:
+                    polindromicMatrix[i][i+j] == True
+                elif j == 1:
+                    if i + j < len(string):
+                        polindromicMatrix[i][i+j] = string[i] == string[i+j]
                 else:
-                    polindromicMatrix[i][j] = (A[i]== A[j]) & polindromicMatrix[i+1][j-1]
+                    if i + j < len(string):
+                        polindromicMatrix[i][i+j] = (string[i] == string[i+j]) and polindromicMatrix[i+1][j-1]
 
-                if polindromicMatrix[i][j] and j - i + 1 > maxLen:
-                    maxLen = j - i + 1
+                if i + j < len(string) and polindromicMatrix and j+1 > maxLen:
                     start = i
-        return string[i: i + maxLen]
+                    maxLen = j + 1
+          return string[start: start + maxLen]
+                    
+                    
+
 

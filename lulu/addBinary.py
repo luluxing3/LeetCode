@@ -20,6 +20,8 @@ class Solution(object):
             byte_sum = byte_a + byte_b + isAdd
             if byte_sum >= 2:
                 isAdd = 1
+            else:
+                isAdd = 0
             string = str(byte_sum % 2) + string
         if isAdd:
             string = '1' + string
