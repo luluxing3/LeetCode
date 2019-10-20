@@ -8,6 +8,30 @@ class Solution(object):
     def __init__(self):
         self.ans = []
     def levelOrder(self, root):
+        current_queue = []
+        next_queue = []
+        if root:
+            current_queue.append(root)
+        else:
+            return self.ans
+        while current_queue:
+            level_list = []
+            while current_queue:
+                p = current_queue.pop(0)
+                level_list.append(p.val)
+                if p.left:
+                    next_queue.append(p.left)
+                if p.right:
+                    next_queue.append(p.right)
+            self.ans.append(level_list)
+            current_queue, next_queue = next_queue, current_queue
+        return self.ans
+            
+
+class Solution(object):
+    def __init__(self):
+        self.ans = []
+    def levelOrder(self, root):
         """
         :type root: TreeNode
         :rtype: List[List[int]]

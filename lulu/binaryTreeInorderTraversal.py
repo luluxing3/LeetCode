@@ -8,6 +8,19 @@
 class Solution(object):
     def __init__(self):
         self.ans = []
+
+    def inorder(self, root):
+        stack = []
+        p = root
+        while stack or p:
+            if p:
+                stack.append(p)
+                p = p.left
+            else:
+                p = stack.pop()
+                self.ans.append(p.val)
+                p = p.right
+        return self.ans
         
     def inorderTraversal(self, root):
         """
