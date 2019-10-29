@@ -22,10 +22,10 @@ class Solution(object):
                 stack.append(heights[i])
             i += 1
         
-        count = 1
+        count = 0
         while len(stack) != 0:
-            maxArea = max(maxArea, stack[-1] * count)
             count += 1
+            maxArea = max(maxArea, stack[-1] * count)
             stack.pop()
             
         return maxArea
